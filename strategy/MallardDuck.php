@@ -9,21 +9,11 @@
 namespace strategy;
 
 
-class MallardDuck extends Duck implements Flyable, Quackable
+class MallardDuck extends Duck
 {
 
     public function display()
     {
         echo 'Mallard duck!' . PHP_EOL;
-    }
-
-    public function fly()
-    {
-        echo 'Fly!'. PHP_EOL;
-    }
-
-    public function quack()
-    {
-        echo 'mallar Quack!'. PHP_EOL;
     }
 }

@@ -19,9 +19,9 @@ $ducks = [
 /** @var \strategy\Duck $duck */
 foreach ($ducks as $duck) {
     $duck->display();
-    $duck->quack();
+    $duck->performQuack();
     $duck->swim();
-    $duck->fly();
+    $duck->performFly();
 
     echo PHP_EOL;
 }
