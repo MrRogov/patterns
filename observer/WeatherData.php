@@ -83,5 +83,5 @@ class WeatherData implements Subject
         $this->measurementsChanged();
     }
 
-    
+
 }
