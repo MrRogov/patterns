@@ -14,7 +14,10 @@ use decorator\Beverage;
 class Espresso extends Beverage
 {
 
-    public function getDescription()
+    /**
+     * Espresso constructor.
+     */
+    public function __construct()
     {
         $this->description = "Espresso";
     }
