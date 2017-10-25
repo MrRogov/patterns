@@ -13,8 +13,13 @@ use pizza\Pizza;
 
 abstract class PizzaStore
 {
+    /**
+     * @param $type
+     * @return Pizza
+     */
     public function orderPizza($type)
     {
+
         /** @var Pizza $pizza */
         $pizza = $this->createPizza($type);
 
@@ -24,11 +29,13 @@ abstract class PizzaStore
         $pizza->box();
 
         return $pizza;
+
     }
 
     /**
      * @param $type
      * @return Pizza
      */
-    abstract public function createPizza($type);
+    abstract protected function createPizza($type);
+
 }
