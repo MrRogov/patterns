@@ -9,21 +9,28 @@
 namespace factory;
 
 
-
-use pizza\ny\NYStyleChessePizza;
+use pizza\ny\NYPizzaIngredientFactory;
+use pizza\ny\NYStyleCheesePizza;
+use pizza\Pizza;
 
 class NYStylePizzaStore extends PizzaStore
 {
     /**
      * @param $type
-     * @return null|NYStyleChessePizza
+     * @return null|Pizza
      */
     public function createPizza($type)
     {
         $pizza = null;
 
-        if($type == 'cheese')
-            return new NYStyleChessePizza();
+        if ($type == 'cheese')
+            return new NYStyleCheesePizza(new NYPizzaIngredientFactory());
+//        if($type == 'meat')
+//            return new ...
+//        if($type == 'pepperoni')
+//            return new ...
+//        if($type == 'veggie')
+//            return new ...
 
         return $pizza;
     }

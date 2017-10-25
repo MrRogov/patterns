@@ -11,7 +11,7 @@ namespace pizza\ny;
 
 use pizza\CheesePizza;
 
-class NYStyleChessePizza extends CheesePizza
+class NYStyleCheesePizza extends CheesePizza
 {
-
+    //pizza implementation
 }

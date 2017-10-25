@@ -9,11 +9,16 @@
 namespace pizza;
 
 
-class CheesePizza implements Pizza
+class CheesePizza extends Pizza
 {
+
     public function prepare()
     {
-        return self::class . 'prepare';
+       echo 'preparing';
+       $factory = $this->ingredientFactory;
+
+       $this->dough = $factory->createDough();
+       $this->cheese = $factory->createCheese();
     }
 
     public function bake()

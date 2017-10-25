@@ -9,14 +9,40 @@
 namespace pizza;
 
 
-interface Pizza
+use factory\PizzaIngredientFactory;
+
+abstract class Pizza
 {
-    public function prepare();
+    public $name;
+    public $dough;
+    public $sauce;
+    public $veggies;
+    public $cheese;
+    public $pepperoni;
+    public $clam;
 
-    public function bake();
+    protected $ingredientFactory;
 
-    public function cut();
+    abstract public function prepare();
 
-    public function box();
+    public function __construct(PizzaIngredientFactory $ingredientFactory)
+    {
+        $this->ingredientFactory = $ingredientFactory;
+    }
+
+    public function bake()
+    {
+
+    }
+
+    public function cut()
+    {
+
+    }
+
+    public function box()
+    {
+
+    }
 
 }
