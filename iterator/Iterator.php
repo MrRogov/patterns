@@ -8,7 +8,14 @@
 
 namespace iterator;
 
-
+/**
+ * My test iterator.
+ * Use system Iterator
+ * @see \Iterator
+ *
+ * Interface Iterator
+ * @package iterator
+ */
 interface Iterator
 {
     /**

@@ -12,7 +12,7 @@ namespace iterator;
  * Class DinerMenuIterator
  * @package iterator
  */
-class DinerMenuIterator implements Iterator
+class DinerMenuIterator implements \Iterator
 {
     /**
      * @var array
@@ -33,23 +33,48 @@ class DinerMenuIterator implements Iterator
         $this->items = $items;
     }
 
-
+    /**
+     *
+     */
     public function next()
     {
-        $menuItem = $this->items[$this->position];
-        $this->position++;
-        return $menuItem;
+        $this->position += 1;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function current()
+    {
+        return $this->items[$this->position];
+    }
+
+    /**
+     *
+     */
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function key()
+    {
+        $keys = array_keys($this->items);
+        return $keys[$this->position];
     }
 
     /**
      * @return bool
      */
-    public function hasNext()
+    public function valid()
     {
-        if ($this->position >= count($this->items) || $this->items[$this->position] === NULL) {
-            return false;
-        } else {
+        if (isset($this->items[$this->position]))
             return true;
-        }
+        else
+            return false;
     }
+
 }

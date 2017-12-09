@@ -19,7 +19,7 @@ class Waitress
     public $dinerMenu;
 
     /**
-     * @var
+     * @var PancakeMenu
      */
     public $pancakeMenu;
 
@@ -31,24 +31,27 @@ class Waitress
     public function __construct($dinerMenu, $pancakeMenu)
     {
         $this->dinerMenu = $dinerMenu;
+        $this->pancakeMenu = $pancakeMenu;
     }
 
     public function printMenu()
     {
         $dinerIterator = $this->dinerMenu->createIterator();
+        $pancakeIterator = $this->pancakeMenu->createIterator();
 
         $this->_printMenu($dinerIterator);
+        $this->_printMenu($pancakeIterator);
     }
 
 
     /**
-     * @param Iterator $iterator
+     * @param \Iterator $iterator
      */
-    private function _printMenu(Iterator $iterator)
+    private function _printMenu(\Iterator $iterator)
     {
-        while ($iterator->hasNext()) {
-            $menuItem = $iterator->next();
-            print_r($menuItem);
+        while ($iterator->valid()) {
+            print_r($iterator->current());
+            $iterator->next();
         }
     }
 }

@@ -7,8 +7,8 @@ $autoloader = new AutoLoader();
 
 
 $dinerMenu = new \iterator\DinerMenu();
+$pancakeMenu = new \iterator\PancakeMenu();
 
-
-$w = new \iterator\Waitress($dinerMenu, null);
+$w = new \iterator\Waitress($dinerMenu, $pancakeMenu);
 $w->printMenu();
 
